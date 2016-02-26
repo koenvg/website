@@ -3,7 +3,13 @@
 require('dotenv').load();
 
 // Require keystone
-var keystone = require('keystone');
+var express = require('express'),
+	mongoose = require('mongoose'),
+	app = express(),
+	keystone = require('keystone');
+
+keystone.set('app', app);
+keystone.set('mongoose', mongoose);
 
 // Initialise Keystone with your project's configuration.
 // See http://keystonejs.com/guide/config for available options

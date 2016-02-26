@@ -1,15 +1,15 @@
-FROM mhart/alpine-node:base
-# FROM mhart/alpine-node:base-0.10
-# FROM mhart/alpine-node
+FROM node:latest
+
+# Create app directory
 
 WORKDIR /opt/app
-ADD ./app .
 
-# If you have native dependencies, you'll need extra tools
-# RUN apk add --no-cache make gcc g++ python
-
-# If you need npm, don't use a base tag
+# Install app dependencies
+# COPY package.json /opt/app
 # RUN npm install
 
+# Bundle app source
+COPY . /opt/app
+
 EXPOSE 3000
-CMD ["node", "keystone.js"]
+CMD [ "npm", "start" ]

@@ -2,7 +2,8 @@ var gulp = require('gulp');
 var jshint = require('gulp-jshint');
 var jshintReporter = require('jshint-stylish');
 var watch = require('gulp-watch');
-var shell = require('gulp-shell')
+var shell = require('gulp-shell');
+var nodemon = require('gulp-nodemon');
 
 var sass = require('gulp-sass');
 
@@ -41,8 +42,14 @@ gulp.task('sass', function(){
 		.pipe(gulp.dest(paths.style.output));
 });
 
+gulp.task('runKeystone', function () {
+	nodemon({
+		script: 'keystone.js'
+		, ext: 'js html'
+		, env: { 'NODE_ENV': 'development' }
+	})
+});
 
-gulp.task('runKeystone', shell.task('node keystone.js'));
 gulp.task('watch', [
 
   'watch:sass',

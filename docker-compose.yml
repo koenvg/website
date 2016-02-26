@@ -9,3 +9,5 @@ web:
     - "./app:/opt/app"
 mongo:
   image: mongo
+  ports:
+    - "27017:27017"

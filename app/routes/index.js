@@ -28,7 +28,8 @@ keystone.pre('render', middleware.flashMessages);
 
 // Import Route Controllers
 var routes = {
-	views: importRoutes('./views')
+	views: importRoutes('./views'),
+	admin: importRoutes('./admin')
 };
 
 // Setup Route Bindings
@@ -44,4 +45,10 @@ exports = module.exports = function(app) {
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
 	
+	
+	// Hack for single item model
+	app.all('/keystone/banners', routes.admin.banner, require('../node_modules/keystone/admin/routes/views/item'));
+	app.all('/keystone/banners/:item', function(req, res) {
+		res.redirect('/keystone/banners');
+	});
 };

@@ -8,7 +8,8 @@ var Types = keystone.Field.Types;
 
 var Service = new keystone.List('Service', {
 	map: { name: 'title' },
-	autokey: { from: 'title', path: 'key', unique: true }
+	autokey: { from: 'title', path: 'key', unique: true },
+	sortable: true
 });
 
 Service.add({

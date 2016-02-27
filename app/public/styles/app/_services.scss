@@ -1,0 +1,52 @@
+.services{
+  margin-top: 4rem;
+  h3{
+    padding: 0 0 10px 0;
+    position: relative;
+
+    &:before{
+      content: "";
+      position: absolute;
+      width: 20%;
+      height: 5px;
+      bottom: 0;
+      left: 0;
+      background-color: $navbar-font-color;
+
+    }
+  }
+  .col{
+    padding: 2.75rem 1.75rem
+  }
+}
+.service{
+
+  h5{
+    position: relative;
+    padding: 4px 0 0 80px;
+    font-size: 1.4rem;
+    font-weight: 800;
+    line-height: 3rem;
+    margin: 0;
+    &:before{
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 3rem;
+    }
+  }
+  p{
+    padding: 0.75rem 0;
+    margin: 0;
+  }
+
+  @media #{$medium-and-down} {
+    h5{
+
+      &:before{
+        font-size: 16px;
+      }
+    }
+  }
+}
+

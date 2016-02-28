@@ -14,6 +14,7 @@ var paths = {
 ,
 	'style': {
 		all: './public/styles/**/*.scss',
+		source: './public/styles/site.scss',
 		output: './public/styles/'
 	}
 
@@ -37,7 +38,7 @@ gulp.task('watch:sass', function () {
 });
 
 gulp.task('sass', function(){
-	gulp.src(paths.style.all)
+	gulp.src(paths.style.source)
 		.pipe(sass().on('error', sass.logError))
 		.pipe(gulp.dest(paths.style.output));
 });

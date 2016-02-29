@@ -4,12 +4,12 @@ block content
 	.font-page-banner(data-ks-editable=editable(user, { list: 'Banner', id: data.banner[0].id }))
 		img(src='#{ data.banner[0]._.banner.scale(1500,600) }')
 		.banner-title
-			!{ data.banner[0].content }
+			!{data.banner[0].content}
 	.container.services
 		.row
 			.col.l4.m6
 				h3 Services
 			each service in data.services
-				.col.l4.m6.service
-					h5.icon(class='#{ service.icon }') #{service.title}
-					!{ service.content }
+				.col.l4.m6.service(data-ks-editable=editable(user, { list: 'Service', id: service.id }))
+					h5.icon(class='#{service.icon}') #{service.title}
+					!{service.content}

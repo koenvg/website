@@ -16,7 +16,7 @@ var Service = new keystone.List('Service', {
 
 Service.add({
 	title: { type: String, required: true },
-	icon: { type: Types.Select, options: iconList, default: 'basic-alarm', index: true },
+	icon: { type: Types.Select, options: iconList, index: true },
 	content: { type: Types.Html, wysiwyg: true, height: 400 }
 });
 

@@ -26,7 +26,7 @@ exports = module.exports = function(req, res) {
 	// Load other posts
 	view.on('init', function(next) {
 
-		var q = keystone.list('Service').model.find();
+		var q = keystone.list('Service').model.find().sort('sortOrder');
 
 		q.exec(function(err, results) {
 			locals.data.services = results;

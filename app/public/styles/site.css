@@ -2467,7 +2467,7 @@ ul {
 .z-depth-0 {
   box-shadow: none !important; }
 
-.z-depth-1, .card-panel, .card, .toast, .btn, .btn-large, .btn-floating, .dropdown-content, .collapsible, .side-nav {
+.z-depth-1, .scrolled nav.main-nav, .scrolled nav.main-nav .nav-wrapper i, .scrolled nav.main-nav a.button-collapse, .scrolled nav.main-nav a.button-collapse i, .card-panel, .card, .toast, .btn, .btn-large, .btn-floating, .dropdown-content, .collapsible, .side-nav {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); }
 
 .z-depth-1-half, .btn:hover, .btn-large:hover, .btn-floating:hover {
@@ -5905,7 +5905,8 @@ nav.main-nav {
   background-color: transparent;
   width: 100%;
   height: 56px;
-  line-height: 56px; }
+  line-height: 56px;
+  transition: 0.5s height ease, 0.75s line-height ease; }
   nav.main-nav a {
     font-family: "Montserrat", sans-serif;
     color: #424242; }
@@ -6031,6 +6032,11 @@ nav.main-nav {
     line-height: 100px; }
   .navbar-fixed {
     height: 100px; } }
+
+.scrolled nav.main-nav, .scrolled nav.main-nav .nav-wrapper i, .scrolled nav.main-nav a.button-collapse, .scrolled nav.main-nav a.button-collapse i {
+  height: 56px;
+  line-height: 56px;
+  background-color: #fff; }
 
 @font-face {
   font-family: "Roboto";
@@ -8981,6 +8987,13 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   .picker--time .picker__box {
     margin-bottom: 5em; } }
 
+#body {
+  padding-top: 56px; }
+
+@media only screen and (min-width: 601px) {
+  #body {
+    padding-top: 100px; } }
+
 .font-page-banner {
   position: relative;
   width: 100%; }
@@ -9027,7 +9040,8 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 .service p {
   padding: 0.75rem 0;
   margin: 0;
-  font-family: 'Open Sans',Arial,Helvetica,sans-serif; }
+  font-family: 'Open Sans',Arial,Helvetica,sans-serif;
+  font-weight: 300; }
 
 @media only screen and (max-width: 992px) {
   .service h5:before {

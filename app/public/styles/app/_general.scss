@@ -1,0 +1,11 @@
+#body {
+  padding-top: $navbar-height-mobile;
+}
+@media #{$medium-and-up} {
+  #body {
+	padding-top: $navbar-height;
+  }
+}
+
+
+

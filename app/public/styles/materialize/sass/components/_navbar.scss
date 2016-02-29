@@ -1,11 +1,10 @@
 nav.main-nav {
   color: transparent;
   background-color: transparent;
-
   width: 100%;
   height: $navbar-height-mobile;
   line-height: $navbar-height-mobile;
-
+  transition: 0.5s height ease, 0.75s line-height ease;
   a {
     font-family: $navbar-font-family;
     color: $navbar-font-color;
@@ -192,3 +191,11 @@ nav.main-nav {
 
 
 // Change style when scrolled
+.scrolled{
+  nav.main-nav, nav.main-nav .nav-wrapper i, nav.main-nav a.button-collapse, nav.main-nav a.button-collapse i{
+	height: $navbar-height-mobile;
+	line-height: $navbar-height-mobile;
+	background-color: $navbar-bg-color;
+	@extend .z-depth-1;
+  }
+}

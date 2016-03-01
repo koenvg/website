@@ -54,6 +54,7 @@ keystone.set('nav', {
 	'enquiries': 'enquiries',
 	'services': 'services',
 	'banner': 'banners',
+	'offers': 'offers',
 	'users': 'users'
 });
 

@@ -34,7 +34,7 @@ gulp.task('watch:lint', function () {
 
 
 gulp.task('watch:sass', function () {
-	gulp.watch(paths.style.all, ['sass']);
+	gulp.watch('./public/styles/**/*.scss', ['sass']);
 });
 
 gulp.task('sass', function(){

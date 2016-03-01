@@ -8,6 +8,7 @@ exports = module.exports = function(req, res) {
 	locals.section = 'home';
 	locals.data = {
 		services: [],
+		offers: [],
 		banner: {}
 	};
 
@@ -30,6 +31,18 @@ exports = module.exports = function(req, res) {
 
 		q.exec(function(err, results) {
 			locals.data.services = results;
+			next(err);
+		});
+
+	});
+	
+	// Load the offers
+	view.on('init', function(next) {
+
+		var q = keystone.list('Offer').model.find().sort('sortOrder');
+
+		q.exec(function(err, results) {
+			locals.data.offers = results;
 			next(err);
 		});
 

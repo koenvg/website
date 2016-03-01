@@ -15,4 +15,17 @@ block content
 				.col.l4.m6.service.revealOnScroll(data-ks-editable=editable(user, { list: 'Service', id: service.id }) data-animation='fadeIn' data-timeout='#{delay}')
 					h5.icon(class='#{service.icon}') #{service.title}
 					!{service.content}
+	.offers
+		.row
+			each offer,index in data.offers
+				.col.l6
+					.offer
+						img(src='#{ offer._.background.scale(920,658)}')
+						.offer-overlay(class=(index % 2 == 0 ? 'light' : 'dark'))
+						.offer-description
+							h5 #{ offer.title }
+							!{ offer.content }
+						
+			
+					
 				

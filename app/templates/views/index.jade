@@ -19,12 +19,15 @@ block content
 		.row
 			each offer,index in data.offers
 				.col.l6
-					.offer
+					.offer(class=(index % 2 == 0 ? 'light' : 'dark'))
 						img(src='#{ offer._.background.scale(920,658)}')
 						.offer-overlay(class=(index % 2 == 0 ? 'light' : 'dark'))
 						.offer-description
-							h5 #{ offer.title }
-							!{ offer.content }
+							.row
+								h5 #{ offer.title }
+								!{ offer.content }
+							.row
+								a.waves-effect.waves.btn-large(href='' class=(index % 2 == 0 ? 'light' : 'dark')) Button
 						
 			
 					

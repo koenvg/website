@@ -5,8 +5,8 @@ FROM node:argon
 WORKDIR /opt/app
 
 # Install app dependencies
-# COPY package.json /opt/app
-# RUN npm install
+COPY ./app/package.json /opt/app
+RUN npm install
 
 # Bundle app source
 COPY . /opt/app

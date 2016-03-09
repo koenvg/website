@@ -5,6 +5,11 @@
   }
 }
 .offer {
+  &.light{
+	color: white;
+  }
+  &.dark{
+  }
   position: relative;
   img{
 	width: 100%;
@@ -15,6 +20,8 @@
 	position: absolute;
 	left: 0;
 	top: 0;
+	width: 100%;
+	height: 100%;
 	z-index: 99;
   }
 }
@@ -26,11 +33,16 @@
   width: 100%;
   height: 100%;
   z-index: 98;
-  opacity: 0.5;
+  
   &.light{
-	background-color: color("amber", "lighten-2");
+	
+	background-color: color("indigo", "darken-3");
+	background-color: $button-color-dark;
+	opacity: 0.8;
   }
   &.dark{
-	background-color: color("amber", "darken-2");
+	background-color: color("yellow", "lighten-2");
+	background-color: $button-color-light;
+	opacity: 0.8;
   }
 }

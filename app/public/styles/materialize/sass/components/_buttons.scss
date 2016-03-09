@@ -53,6 +53,19 @@
   }
 }
 
+// light and dark buttons
+.btn-large {
+	&.light {
+	  color: $button-color-dark;
+	  background-color: $button-color-light;
+	}
+  &.dark{
+	color: $button-color-light;
+	background-color: $button-color-dark;
+  }
+}
+
+
 // Floating button
 .btn-floating {
   display: inline-block;

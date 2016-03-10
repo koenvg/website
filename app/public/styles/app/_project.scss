@@ -1,5 +1,5 @@
-.projects{
-  margin: 5rem 0;
+.projects-nav{
+  margin: 5rem 0 2rem 0;
   padding: 3rem 0;
 
   ul {
@@ -42,7 +42,7 @@
 		-webkit-transform: scaleX(1);
 		transform: scaleX(1);
 	  }
-	  &.selected:before {
+	  &.selected-project-category:before {
 		visibility: visible;
 		-webkit-transform: scaleX(1);
 		transform: scaleX(1);
@@ -53,4 +53,14 @@
 	  float: left;
 	}
   }
+}
+
+
+/**
+** Masonry grid
+**/
+
+.grid-item {
+  	float: left;
+	margin: 2rem;
 }

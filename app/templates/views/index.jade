@@ -20,7 +20,7 @@ block content
 			each offer,index in data.offers
 				.col.l6(data-ks-editable=editable(user, { list: 'Offer', id: offer.id }))
 					.offer(class=(index % 2 == 0 ? 'light' : 'dark') )
-						img(src='#{ offer._.background.scale(920,658)}')
+						img(src='#{ offer._.background.fit(900)}')
 						.offer-overlay(class=(index % 2 == 0 ? 'light' : 'dark'))
 						.offer-description
 							.row
@@ -28,18 +28,31 @@ block content
 								!{ offer.content }
 							.row
 								a.waves-effect.waves.btn-large(href='' class=(index % 2 == 0 ? 'light' : 'dark')) Button
-	section.projects.light-background
-		.container
-			.row
-				h3.text-center.bold Recent Work
-			.row.text-center
-				ul
-					li
-						a.selected(href='#' ) All
-					each category in data.projectData.categories
+	section.projects
+		.projects-nav.light-background
+			.container
+				.row
+					h3.text-center.bold Recent Work
+				.row.text-center.filter-button-group
+					ul
 						li
-							a(href='#' )= category.name
+							a.selected-project-category(href='javascript:void(0)' data-filter='*') All
+						each category in data.projectData.categories
+							li
+								a(href='javascript:void(0)' data-filter='.#{ category.name }')= category.name
 						
-			
+		.row
+			.grid
+				each project in data.projectData.projects
+					- var category_classes = project.categories.map(function(category) {return category.name}).join(' ');
+					.grid-item(class='#{ category_classes }')
+						- var aspectRatio = project.image.width / project.image.height
+						if aspectRatio > 1
+							img(src='#{ project._.image.fit(0,300)}')
+						else
+							img(src='#{ project._.image.fit(0,600)}')
+						
 					
 				
+block js
+	script(src='/js/project.js')

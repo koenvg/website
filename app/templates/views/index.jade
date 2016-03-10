@@ -5,7 +5,7 @@ block content
 		img(src='#{ data.banner[0]._.banner.scale(1500,600) }')
 		.banner-title
 			!{data.banner[0].content}
-	.container.services
+	section.container.services
 		.row
 			.col.l4.m6
 				h3 Services
@@ -15,7 +15,7 @@ block content
 				.col.l4.m6.service.revealOnScroll(data-ks-editable=editable(user, { list: 'Service', id: service.id }) data-animation='fadeIn' data-timeout='#{delay}')
 					h5.icon(class='#{service.icon}') #{service.title}
 					!{service.content}
-	.offers
+	section.offers
 		.row
 			each offer,index in data.offers
 				.col.l6(data-ks-editable=editable(user, { list: 'Offer', id: offer.id }))
@@ -28,14 +28,17 @@ block content
 								!{ offer.content }
 							.row
 								a.waves-effect.waves.btn-large(href='' class=(index % 2 == 0 ? 'light' : 'dark')) Button
-	.projects
-		.row
-			nav.main-nav(role='navigation')
-				.nav-wrapper
-					ul#nav-mobile.center.hide-on-med-and-down
-						each category in data.projectData.categories
-							li
-								a(href='#' )= category.name
+	section.projects.light-background
+		.container
+			.row
+				h3.text-center.bold Recent Work
+			.row.text-center
+				ul
+					li
+						a.selected(href='#' ) All
+					each category in data.projectData.categories
+						li
+							a(href='#' )= category.name
 						
 			
 					

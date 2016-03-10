@@ -11361,6 +11361,24 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   -webkit-animation-name: slideOutUp;
   animation-name: slideOutUp; }
 
+/**
+* Section backgrounds
+**/
+.light-background {
+  background-color: #ECECEC; }
+
+.text-left {
+  text-align: left; }
+
+.text-right {
+  text-align: right; }
+
+.text-center {
+  text-align: center; }
+
+.bold {
+  font-weight: 800; }
+
 #body {
   padding-top: 56px; }
 
@@ -11457,3 +11475,48 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
     background-color: #fff176;
     background-color: #fafafa;
     opacity: 0.8; }
+
+.projects {
+  margin: 5rem 0;
+  padding: 3rem 0; }
+  .projects ul {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    /* For IE, the outcast */
+    zoom: 1;
+    *display: inline; }
+    .projects ul li {
+      transition: background-color .3s;
+      float: left;
+      padding: 0; }
+    .projects ul a {
+      transition: background-color .3s;
+      font-size: 1rem;
+      color: #424242;
+      padding: 5px;
+      margin: 0 10px;
+      position: relative; }
+      .projects ul a:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #424242;
+        visibility: hidden;
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+        -webkit-transition: all 0.3s ease-in-out 0s;
+        transition: all 0.3s ease-in-out 0s; }
+      .projects ul a:hover:before {
+        visibility: visible;
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1); }
+      .projects ul a.selected:before {
+        visibility: visible;
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1); }
+    .projects ul.left {
+      float: left; }

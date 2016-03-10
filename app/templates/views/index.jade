@@ -18,8 +18,8 @@ block content
 	.offers
 		.row
 			each offer,index in data.offers
-				.col.l6
-					.offer(class=(index % 2 == 0 ? 'light' : 'dark'))
+				.col.l6(data-ks-editable=editable(user, { list: 'Offer', id: offer.id }))
+					.offer(class=(index % 2 == 0 ? 'light' : 'dark') )
 						img(src='#{ offer._.background.scale(920,658)}')
 						.offer-overlay(class=(index % 2 == 0 ? 'light' : 'dark'))
 						.offer-description
@@ -28,6 +28,14 @@ block content
 								!{ offer.content }
 							.row
 								a.waves-effect.waves.btn-large(href='' class=(index % 2 == 0 ? 'light' : 'dark')) Button
+	.projects
+		.row
+			nav.main-nav(role='navigation')
+				.nav-wrapper
+					ul#nav-mobile.center.hide-on-med-and-down
+						each category in data.projectData.categories
+							li
+								a(href='#' )= category.name
 						
 			
 					

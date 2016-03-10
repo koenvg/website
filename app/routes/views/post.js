@@ -38,7 +38,6 @@ exports = module.exports = function(req, res) {
 			locals.data.posts = results;
 			next(err);
 		});
-		
 	});
 	
 	// Render the view

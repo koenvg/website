@@ -8,6 +8,10 @@ exports = module.exports = function(req, res) {
 	locals.section = 'home';
 	locals.data = {
 		services: [],
+		projectData:{
+			categories: [],
+			projects: []
+		},
 		offers: [],
 		banner: {}
 	};
@@ -43,6 +47,34 @@ exports = module.exports = function(req, res) {
 
 		q.exec(function(err, results) {
 			locals.data.offers = results;
+			next(err);
+		});
+
+	});
+
+	// Load all categories
+	view.on('init', function(next) {
+
+		keystone.list('ProjectCategory').model.find().sort('name').exec(function(err, results) {
+			locals.data.projectData.categories = results;
+			next(err);
+		});
+
+	});
+
+	// Load the projects
+	view.on('init', function(next) {
+
+		var q = keystone.list('Project')
+			.model
+			.find()
+			.where('state', 'published')
+			.sort('-publishedDate')
+			.limit(10)
+			.populate('categories');
+
+		q.exec(function(err, results) {
+			locals.data.projectData.projects = results;
 			next(err);
 		});
 

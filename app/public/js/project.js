@@ -1,9 +1,18 @@
 var project = function($){
-	var $grid = $('.grid').isotope({
-		// options
-		itemSelector: '.grid-item',
-		layoutMode: 'masonry'
+
+	var $grid = $('.grid').imagesLoaded( function() {
+		// init Isotope after all images have loaded
+		$grid.isotope({
+			// options
+			itemSelector: '.grid-item',
+			percentPosition: true,
+			masonry: {
+				columnWidth: '.grid-sizer',
+				gutter: '.gutter-sizer'
+			}
+		});
 	});
+
 	
 	// Enable filtering
 	$('.filter-button-group').on( 'click', 'a', function() {

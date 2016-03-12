@@ -59,8 +59,17 @@
 /**
 ** Masonry grid
 **/
+.grid-sizer,
+.grid-item { width: 26%; }
+
+.gutter-sizer { width: 2%; }
+
+.grid-item--width2 { width: 49%; }
 
 .grid-item {
-  	float: left;
-	margin: 2rem;
+  margin: 10px 0;
+  img{
+	width: 100%;
+	height: auto;
+  }
 }

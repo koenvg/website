@@ -43,6 +43,8 @@ block content
 						
 		.row
 			.grid
+				.grid-sizer
+				.gutter-sizer
 				each project in data.projectData.projects
 					- var category_classes = project.categories.map(function(category) {return category.name}).join(' ');
 					.grid-item(class='#{ category_classes }')
@@ -55,4 +57,6 @@ block content
 					
 				
 block js
+	script(src='/js/vendor/isotope.min.js')
+	script(src='/js/vendor/imagesloaded.min.js')
 	script(src='/js/project.js')

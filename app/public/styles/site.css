@@ -11524,15 +11524,15 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 /**
 ** Masonry grid
 **/
+.grid {
+  margin: 0 2rem; }
+
 .grid-sizer,
 .grid-item {
-  width: 26%; }
+  width: 32%; }
 
 .gutter-sizer {
   width: 2%; }
-
-.grid-item--width2 {
-  width: 49%; }
 
 .grid-item {
   margin: 10px 0; }

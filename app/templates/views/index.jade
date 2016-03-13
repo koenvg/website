@@ -8,7 +8,7 @@ block content
 	section.container.services
 		.row
 			.col.l4.m6
-				h3 Services
+				h3.title Services
 			- var delay = 0;
 			each service,index in data.services
 				- var delay = (1 + index) * 200;
@@ -29,14 +29,14 @@ block content
 							.row
 								a.waves-effect.waves.btn-large(href='' class=(index % 2 == 0 ? 'light' : 'dark')) Button
 	section.projects
-		.projects-nav.light-background
+		.title-banner.light-background
 			.container
 				.row
 					h3.text-center.bold Recent Work
 				.row.text-center.filter-button-group
 					ul
 						li
-							a.selected-project-category(href='javascript:void(0)' data-filter='*') All
+							a.selected(href='javascript:void(0)' data-filter='*') All
 						each category in data.projectData.categories
 							li
 								a(href='javascript:void(0)' data-filter='.#{ category.name }')= category.name
@@ -54,7 +54,35 @@ block content
 						else
 							img(src='#{ project._.image.fit(0,600)}')
 						
-					
+		.title-banner.light-background
+			.container
+				h4.text-center.bold
+					a.selected(href='/project') View all projects
+	section.development-process
+		.row
+			.col.l3
+				.row
+					.col.s4
+						.bold.text-center.step 01
+					.col.s8
+						h5.title Planning
+						p Identify the different aspects of your project and make a planning accordingly.
+			.col.l3
+				.row
+					.col.s4
+						.bold.text-center.step 02
+					.col.s8
+						h5.title Development
+						p See the progress of your project while development is ongoing so you can correct where needed.
+			.col.l3
+				.row
+					.col.s4
+						.bold.text-center.step 03
+					.col.s8
+						h5.title Launch
+						p Once complete you can decide when to go live with the project.
+
+			
 				
 block js
 	script(src='/js/vendor/isotope.min.js')

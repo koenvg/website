@@ -19,8 +19,8 @@ var project = function($){
 		var filterValue = $(this).attr('data-filter');
 		$grid.isotope({ filter: filterValue });
 		
-		$('.selected-project-category').removeClass('selected-project-category');
-		$(this).addClass('selected-project-category');
+		$('.selected').removeClass('selected');
+		$(this).addClass('selected');
 	});
 
 }(jQuery);

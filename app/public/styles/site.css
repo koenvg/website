@@ -11374,7 +11374,13 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   text-transform: uppercase; }
 
 .mg-top-5 {
-  margin-top: 5rem; }
+  margin-top: 5em; }
+
+.mg-bottom-3 {
+  margin-bottom: 3em; }
+
+.mg-bottom-2 {
+  margin-bottom: 2em; }
 
 h1, h2, h3, h4, h5 {
   font-family: Lato, Arial, Helvetica, sans-serif; }
@@ -11406,6 +11412,15 @@ a.view-more {
   transition: 0.2s all linear; }
   a.view-more:hover {
     background-color: #dfdfdf; }
+
+a.title {
+  color: #212121; }
+
+.date {
+  font-size: 2rem; }
+  .date .day {
+    font-size: 3rem;
+    margin-right: 0.5em; }
 
 #body {
   padding-top: 56px; }
@@ -11567,3 +11582,10 @@ a.view-more {
   .development-process p {
     font-family: 'Open Sans',Arial,Helvetica,sans-serif;
     font-weight: 300; }
+
+/**
+** Front page styling
+**/
+.front-page-blog .post-title {
+  padding: 0 2em;
+  border-left: #212121 1px solid; }

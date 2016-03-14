@@ -58,15 +58,27 @@ block content
 		a.view-more.light-background(href='/project')
 			.container
 				h5.center.thin.upper View all projects
-	section.blog
-		.title-banner
-			.container
-				h2.bold.title-left My 
-					span.thin Blog
+	section.front-page-blog
+		.container.mg-bottom-2
+			h2.bold.title-left My 
+				span.thin Blog
 		.blog-posts.container
 			each post in data.posts
 				.row.blog-post
-					.col.m4
+					- var category_classes = post.categories.map(function(category) {return category.name}).join(' / ');
+					.col.l4.m12
+						.row
+							.col.s6
+								.date.thin
+									span.day= post._.publishedDate.format('DD')
+									span.month= post._.publishedDate.format('MMMM')
+							.col.s6
+								.post-title
+									a.title(href='/blog/post/' + post.slug)
+										h5.bold= post.title
+									.categories= category_classes
+					.col.l8.m12
+						
 						
 	section.development-process
 		.row

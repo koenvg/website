@@ -1,23 +1,28 @@
-// Alignment
-.text-left           { text-align: left; }
-.text-right          { text-align: right; }
-.text-center         { text-align: center; }
-
 // Text styles
-.bold				{ font-weight: 800; }
+.bold {
+  font-weight: 800;
+}
+
+.upper {
+  text-transform: uppercase;
+}
 
 // Margins
-.mg-top-5{
+.mg-top-5 {
   margin-top: 5rem;
 }
 
+h1, h2, h3, h4, h5 {
+  font-family: Lato, Arial, Helvetica, sans-serif;
+}
 
 // Titles
-h5.title, h4.title, h3.title, h2.title{
+h5.title, h4.title, h3.title, h2.title {
   padding: 0 0 10px 0;
   position: relative;
+  display: inline-block;
 
-  &:before{
+  &:before {
 	content: "";
 	position: absolute;
 	width: 20%;
@@ -26,5 +31,24 @@ h5.title, h4.title, h3.title, h2.title{
 	left: 0;
 	background-color: $navbar-font-color;
 
+  }
+}
+
+h2.title-left, h3.title-left {
+  position: relative;
+  display: inline-block;
+  padding: 22px 25px 24px;
+  line-height: 36px;
+  border-left: 2px solid $navbar-font-color;
+}
+
+// links
+a.view-more{
+  display: block;
+  padding: 1rem 0;
+  color: $navbar-font-color;
+  transition: 0.2s all linear;
+  &:hover{
+	background-color: darken($secondary-color, 5%);
   }
 }

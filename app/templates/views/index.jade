@@ -28,6 +28,34 @@ block content
 								!{ offer.content }
 							.row
 								a.waves-effect.waves.btn-large(href='' class=(index % 2 == 0 ? 'light' : 'dark')) Button
+	section.development-process
+		.row
+			.col.l3
+				.row
+					.col.s4
+						.bold.center.step 01
+					.col.s8
+						h5.title Planning
+						p Identify the different aspects of your project and make a planning accordingly.
+			.col.l3
+				.row
+					.col.s4
+						.bold.center.step 02
+					.col.s8
+						h5.title Development
+						p See the progress of your project while development is ongoing so you can correct where needed.
+			.col.l3
+				.row
+					.col.s4
+						.bold.center.step 03
+					.col.s8
+						h5.title Launch
+						p Once complete you can decide when to go live with the project.
+			.col.l3
+				.work-together-block
+					.square
+					h2.bold Lets work together
+					
 	section.projects
 		.title-banner.light-background
 			.container
@@ -62,6 +90,7 @@ block content
 		.container.mg-bottom-2
 			h2.bold.title-left My 
 				span.thin Blog
+			a.link.right-align.thin(href='/blog') Read all of them!
 		.blog-posts.container
 			each post in data.posts
 				.row.blog-post
@@ -77,33 +106,10 @@ block content
 									a.title(href='/blog/post/' + post.slug)
 										h5.bold= post.title
 									.categories= category_classes
-					.col.l8.m12
-						
-						
-	section.development-process
-		.row
-			.col.l3
-				.row
-					.col.s4
-						.bold.center.step 01
-					.col.s8
-						h5.title Planning
-						p Identify the different aspects of your project and make a planning accordingly.
-			.col.l3
-				.row
-					.col.s4
-						.bold.center.step 02
-					.col.s8
-						h5.title Development
-						p See the progress of your project while development is ongoing so you can correct where needed.
-			.col.l3
-				.row
-					.col.s4
-						.bold.center.step 03
-					.col.s8
-						h5.title Launch
-						p Once complete you can decide when to go live with the project.
-						
+					.col.l8.m12 !{ post.content.brief }
+		
+	
+			
 block js
 	script(src='/js/vendor/isotope.min.js')
 	script(src='/js/vendor/imagesloaded.min.js')

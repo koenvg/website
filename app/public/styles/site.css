@@ -11413,8 +11413,13 @@ a.view-more {
   a.view-more:hover {
     background-color: #dfdfdf; }
 
-a.title {
+a {
   color: #212121; }
+
+a.link {
+  transition: 0.4s all linear; }
+  a.link:hover {
+    color: black; }
 
 .date {
   font-size: 2rem; }
@@ -11575,13 +11580,29 @@ a.title {
     height: auto; }
 
 .development-process {
-  margin: 0 2rem; }
+  margin: 4rem 2rem; }
   .development-process .step {
     font-size: 6rem;
     line-height: 6rem; }
   .development-process p {
     font-family: 'Open Sans',Arial,Helvetica,sans-serif;
     font-weight: 300; }
+
+.work-together-block {
+  position: relative; }
+  .work-together-block h2 {
+    margin: 0;
+    z-index: 1;
+    position: relative; }
+  .work-together-block .square {
+    border: 20px solid white;
+    background: #ffff00;
+    width: 70%;
+    height: 380px;
+    position: absolute;
+    top: -25%;
+    right: 25%;
+    z-index: 0; }
 
 /**
 ** Front page styling

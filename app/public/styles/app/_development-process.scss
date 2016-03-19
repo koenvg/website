@@ -1,5 +1,5 @@
 .development-process {
-  margin: 0 2rem;
+  margin: 4rem 2rem;
   
   .step {
 	font-size: 6rem;
@@ -9,5 +9,24 @@
   p{
 	font-family: 'Open Sans',Arial,Helvetica,sans-serif;
 	font-weight: 300;
+  }
+}
+
+.work-together-block{
+  position: relative;
+  h2{
+	margin: 0;
+	z-index: 1;
+	position: relative;
+  }
+  .square{
+	border: 20px solid white;
+	background: color('yellow', 'accent-2');
+	width: 70%;
+	height: 380px;
+	position: absolute;
+	top: -25%;
+	right: 25%;
+	z-index: 0;
   }
 }

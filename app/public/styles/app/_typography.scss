@@ -61,8 +61,15 @@ a.view-more {
   }
 }
 
-a.title {
+a {
   color: $off-black;
+
+}
+a.link{
+  transition: 0.4s all linear;
+  &:hover {
+	color: darken($off-black, 20%);
+  }
 }
 
 // Misc

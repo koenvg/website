@@ -62,10 +62,29 @@ html
 
 
 		//- FOOTER
-		.container: #footer
-
-			//- You don't _have_ to include a link saying your site is powered by KeystoneJS, but we appreciate it!
-			p Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.
+		footer.page-footer
+			.container
+				.row
+					.col.l6.s12
+						h5.bold Koen Van geert
+						p You can use rows and columns here to organize your footer content.
+					.col.l3.s12
+						h5.bold Navigate
+						ul
+							each link in navLinks
+								li
+									a(href=link.href).bold= link.label
+							
+					.col.l3.s12
+						h5.bold Recent posts
+						ul
+							each post in data.posts
+								li
+									a.bold(href='/blog/post/' + post.slug)= post.title
+									p= post._.publishedDate.format('DDMMMM')
+			.footer-copyright
+				.container
+					| © 2016 Koen Van Geert
 
 
 		//- JAVASCRIPT

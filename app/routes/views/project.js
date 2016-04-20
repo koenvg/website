@@ -57,7 +57,7 @@ exports = module.exports = function(req, res) {
 
 	});
 
-	// Load the posts
+	// Load the projects
 	view.on('init', function(next) {
 
 		var q = keystone.list('Project').paginate({

@@ -1,15 +1,16 @@
 FROM node:argon
 
+ENV MONGO_URI="mongodb://mongo/koenvg_be"
+
 # Create app directory
-
-WORKDIR /opt/app
-
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
 # Install app dependencies
-COPY ./app/package.json /opt/app
+COPY ./app/package.json /usr/src/app
 RUN npm install
 
 # Bundle app source
-COPY . /opt/app
+COPY ./app /usr/src/app
 
-EXPOSE 3000
 CMD [ "npm", "start" ]
+
